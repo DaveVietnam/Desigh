@@ -1,0 +1,178 @@
+.types {
+  max-width: 123.5rem;
+  margin: 0 auto;
+
+  @include phones-small {
+    margin-bottom: -15rem;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.28rem;
+    margin-bottom: 3.12rem;
+
+    h3 {
+      font-family: $font-secondary;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 139%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $-color-black;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3.2rem;
+      height: 1px;
+
+      background: $color-main;
+      border-radius: 30px;
+    }
+
+    &::before {
+      top: 50%;
+      left: -150%;
+    }
+    &::after {
+      top: 50%;
+      right: -150%;
+    }
+  }
+
+  &__repair {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    @include large-screen {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet-screen {
+      grid-template-columns: repeat(1, 0.6fr);
+      transform: translateX(20%);
+    }
+
+    @include phones-medium {
+      grid-template-columns: repeat(1, 1fr);
+      transform: none;
+      padding: 0 2rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include desktop-screen {
+        align-items: normal;
+      }
+
+      @include large-screen {
+        &:last-child {
+          transform: translateX(50%);
+        }
+      }
+      @include tablet-screen {
+        &:last-child {
+          transform: none;
+        }
+        align-items: normal;
+      }
+    }
+
+    img {
+      @include tablet-screen {
+        width: 100%;
+      }
+    }
+
+    &-service {
+      padding: 2.5rem 3.4rem 4.9rem;
+      box-shadow: 1rem 1rem 2rem 0 rgba(0, 0, 0, 0.03);
+      transform: translateY(-45%);
+      background-color: $color-white;
+      width: 84.4%;
+      height: 38.5%;
+      position: relative;
+
+      @include desktop-screen {
+        padding: 2.5rem 3.4rem 6.9rem;
+      }
+
+      @include tablet-screen {
+        height: auto;
+      }
+
+      @include phones-small {
+        transform: translateY(-42%);
+      }
+
+      h4 {
+        font-family: $font-secondary;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 139%;
+        color: $color-gray;
+        margin-bottom: 1.3rem;
+
+        @include tablet-screen {
+          font-size: 2.2rem;
+        }
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 4.6rem;
+
+        @include tablet-screen {
+          margin-bottom: 4rem;
+        }
+
+        @include phones-small {
+          margin-bottom: 0;
+        }
+
+        li {
+          font-weight: 400;
+          font-size: 1.3rem;
+          line-height: 205%;
+          color: #959595;
+
+          @include tablet-screen {
+            font-size: 1.8rem;
+          }
+
+          @include phones-small {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      padding: 1.7rem 2.444rem;
+      background-color: $color-main;
+      box-shadow: 0 5px 1.5rem 0 rgba(227, 184, 115, 0.2);
+      font-size: 1.8rem;
+      border: none;
+      transition: all 0.2s;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateY(50%);
+
+      &:hover {
+        background-color: $color-main-hover;
+      }
+    }
+  }
+}

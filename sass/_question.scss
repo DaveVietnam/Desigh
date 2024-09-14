@@ -1,0 +1,75 @@
+.question {
+  width: 65.5%;
+  margin: 0 auto;
+  padding: 3.44rem 18.15rem;
+  box-shadow: 0 3rem 3rem 0 rgba(0, 0, 0, 0.05);
+  background: $color-main-background;
+  transform: translateY(50%);
+  margin-top: -15%;
+
+  @include desktop-screen {
+    width: 55.5%;
+  }
+
+  @include large-screen {
+    padding: 3.44rem 10rem;
+  }
+
+  @include phones-medium {
+    display: none;
+  }
+
+  h3 {
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 139%;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 4.5rem;
+  }
+
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-bottom: 0;
+
+    &__input-form-question {
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        flex-basis: auto;
+        @include large-screen {
+          flex-basis: 100%;
+        }
+      }
+      &:nth-of-type(3) {
+        flex-basis: 100%;
+      }
+
+      label {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      input {
+        background-color: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        color: $color-white;
+        width: 100%;
+
+        &::placeholder {
+          color: $color-white;
+        }
+      }
+    }
+
+    p {
+      color: $color-white;
+    }
+
+    button {
+      padding: 1.6rem 7.4rem;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4.9rem;
+  margin-bottom: 3.32rem;
+
+  &__input-form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 23.5%;
+
+    label {
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 164%;
+      color: rgba(54, 54, 54, 0.5);
+      margin-bottom: 1px;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+      padding: 0.7rem 0.5rem 0.7rem 0.4rem;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 164%;
+        color: #363636;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: inset 0px 0px 0px 3px #e3b873;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 1.8rem 7.4rem;
+    background-color: $color-main;
+    box-shadow: 0 5px 1.5rem 0 rgba(227, 184, 115, 0.2);
+    font-size: 1.4rem;
+    border: none;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $color-main-hover;
+    }
+  }
+
+  &__radio-agreement {
+    display: flex;
+
+    p {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 164%;
+      color: $-color-black;
+    }
+  }
+
+  &__radio-input {
+    opacity: 0;
+    position: absolute;
+  }
+  &__radio-label {
+    position: relative;
+    margin-right: 2.8rem;
+  }
+
+  &__radio-btn {
+    position: absolute;
+
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    border-radius: 1px;
+    width: 1.8rem;
+    height: 1.8rem;
+
+    cursor: pointer;
+    background-color: $color-main;
+  }
+  &__icon-tick {
+    display: none;
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-btn &__icon-tick {
+    display: inline-block;
+  }
+
+  &__radio-input:focus ~ &__radio-label &__radio-btn {
+    outline: none;
+    box-shadow: inset 0px 0px 0px 2px #111;
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-btn {
+    outline: none;
+    box-shadow: none;
+  }
+}

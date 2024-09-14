@@ -1,0 +1,175 @@
+.clients {
+  max-width: 123.5rem;
+  margin: 0 auto;
+  margin-bottom: 13.195rem;
+
+  @include desktop-screen {
+    margin-bottom: 18rem;
+  }
+
+  @include large-screen {
+    padding: 0 8rem;
+  }
+
+  @include phones-medium {
+    margin-bottom: 0;
+  }
+
+  @include phones-small {
+    display: none;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.28rem;
+    margin-bottom: 3.12rem;
+
+    p {
+      width: 30%;
+      font-size: 1.8rem;
+      line-height: 164%;
+      text-align: center;
+      color: $color-gray;
+
+      @include tablet-screen {
+        width: 40%;
+      }
+
+      @include phones-medium {
+        width: 60%;
+      }
+    }
+
+    h3 {
+      font-family: $font-secondary;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 139%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $-color-black;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3.2rem;
+      height: 1px;
+
+      background: $color-main;
+      border-radius: 3rem;
+    }
+
+    &::before {
+      top: 50%;
+      left: -150%;
+    }
+    &::after {
+      top: 50%;
+      right: -150%;
+    }
+  }
+
+  &__clients-box {
+    margin-top: 3.9rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+
+    @include large-screen {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8rem;
+    }
+
+    @include phones-medium {
+      padding: 0 8rem;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10rem;
+    }
+  }
+
+  &__name {
+    display: flex;
+    gap: 2.632rem;
+    margin-bottom: 2.632rem;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+    }
+
+    h4 {
+      flex-basis: 50%;
+      font-weight: 400;
+      font-family: $font-secondary;
+      font-size: 1.8rem;
+      line-height: 127%;
+      color: $-color-black;
+    }
+  }
+
+  &__client {
+    padding: 2.4rem 2rem 11.4rem 2rem;
+    box-shadow: 0 1rem 5rem 0 rgba(0, 0, 0, 0.04);
+    position: relative;
+
+    @include large-screen {
+      &:last-child {
+        transform: translateX(50%);
+      }
+
+      @include phones-medium {
+        &:last-child {
+          transform: none;
+        }
+      }
+    }
+  }
+
+  &__review {
+    p {
+      font-size: 1.3rem;
+      line-height: 180%;
+      color: #959595;
+      margin: 0;
+
+      &:first-of-type {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__details {
+    display: inline-flex;
+    box-shadow: 0.5rem 0.5rem 2rem 0 rgba(227, 184, 115, 0.5);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(50%);
+
+    span {
+      padding: 1.05rem 2.1rem;
+      background-color: $color-main;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      border-right: 1px solid $color-white;
+
+      p {
+        margin: 0;
+        font-family: $font-secondary;
+        font-size: 1.7rem;
+        line-height: 139%;
+        text-transform: uppercase;
+        color: $color-white;
+      }
+    }
+  }
+}

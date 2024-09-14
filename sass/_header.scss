@@ -1,0 +1,185 @@
+.header {
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2.4rem 0 2.2rem;
+    background-color: $color-main-background;
+
+    @include tablet-screen {
+      padding: 2.4rem 2rem 2.2rem;
+      justify-content: space-between;
+    }
+  }
+
+  &__company-name,
+  &__nav-link_active {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-main;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 4.71rem;
+    list-style: none;
+
+    @include large-screen {
+      gap: 1rem;
+    }
+
+    @include tablet-screen {
+      display: none;
+    }
+  }
+
+  &__nav-link:link,
+  &__nav-link:visited {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &__nav-link:hover,
+  &__nav-link:active {
+    color: $color-main;
+    transition: all 0.2s;
+  }
+
+  &__call {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+  }
+
+  &__phone {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: right;
+    color: $color-main;
+
+    @include tablet-screen {
+      display: none;
+    }
+
+    @include phones-medium {
+      display: block;
+      color: $color-white;
+    }
+  }
+
+  &__btn {
+    border-radius: 2px;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+    cursor: pointer;
+
+    &-request {
+      background-color: $color-main;
+      box-shadow: 0 5px 1.5rem 0 rgba(227, 184, 115, 0.2);
+      padding: 1.3rem 3.3rem;
+      font-size: 1.1rem;
+      border: none;
+      transition: all 0.2s;
+      @include phones-medium {
+        display: none;
+      }
+
+      &:hover {
+        background-color: $color-main-hover;
+      }
+    }
+
+    &-hero {
+      padding: 1.9rem 4.2rem 2rem 4.1rem;
+      background-color: $color-main;
+      box-shadow: 0 5px 1.5rem 0 rgba(227, 184, 115, 0.2);
+      font-size: 1.4rem;
+      border: none;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $color-main-hover;
+      }
+
+      &--transparent {
+        padding: 1.8rem 2.7rem 1.9rem 2.7rem;
+        background-color: transparent;
+        border: 1px solid $color-white;
+        font-size: 1.4rem;
+        transition: all 0.2s;
+
+        &:hover {
+          color: $color-main;
+          border: 1px solid $color-main;
+        }
+      }
+    }
+  }
+
+  &__hero {
+    height: 70rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(../img/image-header.jpg);
+    background-size: cover;
+
+    &-info {
+      width: 67.6rem;
+      padding: 19.4rem 0 0 13.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.9rem;
+
+      @include phones-medium {
+        padding: 19rem 3rem;
+        width: auto;
+      }
+
+      @include phones-small {
+        width: 100%;
+        padding: 10rem 2rem;
+      }
+
+      h1 {
+        font-family: $font-secondary;
+        font-size: 4rem;
+        line-height: 133%;
+        text-transform: uppercase;
+        color: $color-white;
+
+        @include phones-medium {
+          text-align: center;
+        }
+
+        @include phones-small {
+          font-size: 3rem;
+        }
+
+        span {
+          color: $color-main;
+        }
+      }
+
+      p {
+        font-size: 2.2rem;
+        line-height: 164%;
+        color: $color-white;
+      }
+    }
+
+    &-btns {
+      margin-top: calc(4.1rem - 1.9rem);
+      display: flex;
+      gap: 2rem;
+
+      @include phones-medium {
+        flex-direction: column;
+      }
+    }
+  }
+}
